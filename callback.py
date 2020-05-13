@@ -84,7 +84,7 @@ class MultipleClassAUROC(Callback):
             with open(self.best_auroc_log_path, "a") as f:
                 f.write(f"(epoch#{epoch + 1}) auroc: {mean_auroc}, lr: {self.stats['lr']}\n")
 
-            # 3. write stats output, this is used for resuming the training
+            # 1. write stats output, this is used for resuming the training
             with open(self.stats_output_path, 'w') as f:
                 json.dump(self.stats, f)
 
